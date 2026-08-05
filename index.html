@@ -538,3 +538,42 @@
 
       <!-- HISTÓRICO -->
       <section id="section-historico" style="display:none;">
+        <div class="card">
+          <div class="flex-between">
+            <div>
+              <div class="section-title">Histórico de Rateios</div>
+              <div class="section-subtitle">Registros salvos em localStorage</div>
+            </div>
+            <button class="btn btn-outline btn-sm" id="btn-recarregar-historico">Recarregar</button>
+          </div>
+
+          <div class="mt-12 table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Período</th>
+                  <th>Data</th>
+                  <th>Bruto Curvelo</th>
+                  <th>Bruto Sete Lagoas</th>
+                  <th>Total Rateado</th>
+                  <th>Alunos Equivalentes</th>
+                  <th>Auxílio Total</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="historico-body">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <div id="pdf-export-shell" class="pdf-export-shell" aria-hidden="true">
+    <div id="pdf-export-inner" class="pdf-export-inner"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
