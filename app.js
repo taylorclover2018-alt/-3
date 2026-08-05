@@ -136,7 +136,6 @@ const init = () => {
   initVeiculosButtons();
   initHeroActions();
   initActions();
-  initNotifications();
   initTheme();
   loadFromStorageForCurrentPeriod();
   renderAll();
@@ -239,35 +238,6 @@ const initTheme = () => {
     const nextTheme = document.body.getAttribute("data-theme") === "light" ? "dark" : "light";
     applyTheme(nextTheme);
     showToast(nextTheme === "light" ? "Tema claro ativado." : "Tema escuro ativado.");
-  });
-};
-
-const initNotifications = () => {
-  const trigger = document.getElementById("topbar-notifications");
-  const panel = document.getElementById("notification-panel");
-  const count = document.getElementById("notification-count");
-
-  if (!trigger || !panel) return;
-
-  const items = panel.querySelectorAll(".notification-item");
-  if (count) count.textContent = items.length.toString();
-
-  const toggle = () => {
-    panel.classList.toggle("show");
-  };
-
-  trigger.addEventListener("click", toggle);
-  trigger.addEventListener("keydown", (event) => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      toggle();
-    }
-  });
-
-  document.addEventListener("click", (event) => {
-    if (!trigger.contains(event.target) && !panel.contains(event.target)) {
-      panel.classList.remove("show");
-    }
   });
 };
 
